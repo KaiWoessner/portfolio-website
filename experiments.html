@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>HTML Tag Experiment</title>
+    <style></style>
+</head>
+<body>
+    <h1>HTML Tag Experiment Page</h1>
+
+    <!-- Template -->
+    <section>
+        <h3>Table for User Credentials (Template)</h2>
+    
+        <table style="border: 1px solid #333">
+            <!-- Table Header -->
+            <thead>
+                <tr>
+                <th >Username</th>
+                <th>Password</th>
+                </tr>
+            </thead>
+            <!-- Table Body of Usernames and Passwords added through template -->
+            <tbody id="user-table-body">
+            </tbody>
+        </table>
+    
+        <!-- Hidden template -->
+        <template id="user-row-template">
+        <tr>
+            <td>user1</td>
+            <td>pass123</td>
+        </tr>
+        <tr>
+            <td>user2</td>
+            <td>mypassword</td>
+        </tr>
+        <tr>
+            <td>user3</td>
+            <td>abc123</td>
+        </tr>
+        </template>
+    </section>
+
+     <!-- Picture -->
+    <section>
+        <h3>Picture</h3>
+        <picture>
+            <source srcset="exp_resources/cat-640x640.jpg" media="(max-width: 800px)">
+            <source srcset="exp_resources/cat-1414x2121.jpg" media="(min-width: 801px)">
+            <img src="exp_resources/cat-1414x2121.jpg" alt="White a tan cat with gray background staring into the camera" width="300">
+        </picture>
+    </section>
+
+    <!-- Audio -->
+    <section>
+        <h3>Audio</h3>
+        <audio controls src="exp_resources/whoosh-sound-effect.mp3" type="audio/mpeg"></audio>
+    </section>
+
+    <!-- Video -->
+    <section>
+        <h3>Video</h3>
+        <video controls src="exp_resources/cubs-game-video.mp4" type="video/mp4" height="400">
+        </video>
+    </section>
+
+    <!-- Canvas -->
+    <section>
+        <h3>Canvas</h3>
+        <p>Draw a red and gray rectangle on canvas.</p>
+        <canvas id="myCanvas" width="300" height="150" style="border: 1px solid #333"></canvas>
+        <script>
+            const canvas = document.getElementById('myCanvas');
+            const ctx = canvas.getContext('2d');
+            // Red rectangle
+            ctx.fillStyle = '#FF0000';
+            ctx.fillRect(20, 20, 150, 50);
+
+            // Gray rectangle
+            ctx.fillStyle = '#bbbbbb';
+            ctx.fillRect(20, 80, 150, 50);
+        </script>
+    </section>
+
+</body>
+</html>

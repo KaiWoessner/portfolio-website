@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Kainoa Woessner's Portfolio - Projects</title>
+    <link rel="stylesheet" href="style.css"> <!-- Not used -->
+    <style>
+        idv-project {
+          display: block;
+          border: 2px solid #ccc;
+          border-radius: 20px;
+          padding: 1em;
+          margin: 1em 0;
+          background-color: #e6e6e6;
+        }
+    </style>
+    <script>
+        class HelloWorldElement extends HTMLElement {
+          constructor() {
+            super();
+            console.log("Hello World!");
+          }
+        }
+        customElements.define('hello-world', HelloWorldElement);
+    </script>
+</head>
+<body>
+    <!-- top bar with gear and navigation -->
+    <header>
+        <!-- Settings button -->
+        <settings-icon>
+            <button commandfor="settings-dialog" command="toggle-popover">
+                <img src="resources/settings-gear.svg" width="48" height="48" alt="Settings" />
+            </button>
+        </settings-icon>
+  
+      <!-- Navigate to other pages -->
+        <nav>
+            <a href="about.html"><b>About</b></a>
+            <a href="experience.html"><b>Experience</b></a>
+            <a href="project.html"><b>Projects</b></a>
+        </nav>
+    </header>
+  
+    <!-- Main content section -->
+    <main>
+        <!-- Static information sidebar  -->
+        <section id="sidebar-section">
+            <!-- Personal Information -->
+            <picture>
+                <source srcset="resources/profile-pic-320x320.png" media="(max-width: 600px)">
+                <img src="resources/profile-pic-652x674.png" alt="Profile photo" width="400" height="400">
+            </picture>
+            <!-- Text information -->
+            <div id="text-info"> 
+                <h2> Kainoa Woessner</h2>
+                <p>4th year Computer Engineering Student at UC San Diego</p>
+                <h3>College Progess...</h3>
+                <progress value="93" max="100">93% Complete!</progress>
+            </div>
+  
+            <!-- Links -->
+            <nav id="media-links">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="mailto:kainoawoessner@gmail.com">Email</a></li>
+                    <li><a href="https://github.com/KaiWoessner">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/kainoawoessner/">LinkedIn</a></li>
+                    <li><a href="resources/kainoa-woessner-resume.pdf">Resume</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <!-- List of projects -->
+        <section id="projects-list">
+            <h1>Projects</h1>
+            <ol>
+                <li>
+                    <!-- Project 1 -->
+                    <idv-project>
+                        <h2>Cartoon Converter</h2>
+                        <!-- Project image -->
+                        <img src="resources/cartoon-converter.png" alt="Picture of cartoon converter webpage converting Chicago Board of Trade building " width="320">
+                
+                        <!-- Project skills -->
+                        <p> <b>Skills</b>: React, Flask, OpenCV, DevTools </p>
+                
+                        <!-- Project Description -->
+                        <p>
+                            Developed a full-stack image processing web app using React, Flask, and OpenCV to convert user-uploaded images into
+                            cartoonized versions. Implemented a dynsamic pipeline triggered by slider updates to apply grayscale conversion, adaptive thresholding,
+                            morphological operations, bilateral filtering, and bitwise maskin
+                        </p>
+
+                        <!-- Link to Project -->
+                        <p> 
+                            <b>Project link</b>:
+                            <a href="https://github.com/KaiWoessner/CartoonConverter">https://github.com/KaiWoessner/CartoonConverter</a>
+                        </p>
+                    </idv-project>
+                </li>
+                <li>
+                    <!-- Project 2 -->
+                    <idv-project>
+                        <h2>Dev Journal</h2>
+                        <!-- Project image -->
+                        <img src="resources/dev-journal.png" alt="Picture of Dev Journal homepage" width="320">
+                
+                        <!-- Project skills -->
+                        <p> <b>Skills</b>: HTML, CSS, JS, LocalStorage, DevTools, Github Actions, Puppeteer, Agile </p>
+                
+                        <!-- Project Description -->
+                        <p>
+                            Developed a local-first journaling website using HTML, CSS, and Javascript that includes features for task management, mood and productivity tracking, and past activity reviewing. Formed a CI/CD pipeline with Jest and GitHub Actions that automates unit testing, end-to-end testing, and code
+                            quality checks to ensure reliable website deployments. Employed Agile methodologies, including sprints, daily stand-ups, and retrospectives, to manage project development
+                        </p>
+
+                        <!-- Link to Project -->
+                        <p> 
+                            <b>Project link</b>:
+                            <a href="https://github.com/cse110-sp24-group25/Developer-Journal">https://github.com/cse110-sp24-group25/Developer-Journal</a>
+                        </p>
+
+                        <!-- Embeded Project Video -->
+                        <article>
+                            <h3>Project Video</h3>
+                            <iframe
+                                src="https://www.youtube.com/embed/O4BMl-_iPNE"
+                                title="Project demo video"
+                                width="560"
+                                height="315">
+                            </iframe>
+                        </article>
+                    </idv-project>
+                </li>
+            </ol>
+        </section>
+      </main>
+  
+    <!-- Footer -->
+    <footer>
+      <p>&copy; <span>2025</span> Kainoa Woessner</p>
+    </footer>
+  
+    <!-- Settings dialog -->
+    <dialog id="settings-dialog" popover>
+        <button commandfor="settings-dialog" command="hide-popover">Close</button>
+
+        <!-- Light/Dark Mode -->
+        <legend>Theme</legend>
+        <label><input type="radio" name="theme" value="light" checked> Light</label>
+        <label><input type="radio" name="theme" value="dark"> Dark</label>
+
+        <!-- Send Message Form -->
+        <form method="post">
+
+        <fieldset>
+            <legend>Send a message to me!</legend>
+
+            <!-- Form contents -->
+            <label for="sender-name">Name:</label>
+            <input id="sender-name" name="name" type="text" placeholder="Your name">
+
+            <label for="sender-email">Email:</label>
+            <input id="sender-email" name="email" type="email" placeholder="you@example.com">
+
+            <label for="message-content">Message:</label>
+            <textarea id="message-content" name="message" rows="6" cols="40" placeholder="Write your message here"></textarea>
+            <br>
+            <button type="submit">Send</button>
+        </fieldset>
+        </form>
+    </dialog>
+
+    <hello-world></hello-world>
+  
+    <noscript>
+      <p><em>Note:</em> JavaScript is disabled — interactive features are unavailable.</p>
+    </noscript>
+  </body>
+  </html>

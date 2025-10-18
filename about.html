@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Kainoa Woessner's Portfolio - About</title>
+    <link rel="stylesheet" href="style.css"> <!-- Not used -->
+    <style>
+        /* Empty */
+    </style>
+    <script>
+        class HelloWorldElement extends HTMLElement {
+          constructor() {
+            super();
+            console.log("Hello World!");
+          }
+        }
+        customElements.define('hello-world', HelloWorldElement);
+    </script>
+</head>
+<body>
+  <!-- top bar with gear and navigation -->
+  <header>
+        <!-- Settings button -->
+        <settings-icon>
+            <button commandfor="settings-dialog" command="toggle-popover">
+                <img src="resources/settings-gear.svg" width="48" height="48" alt="Settings" />
+            </button>
+        </settings-icon>
+
+        <!-- Navigate to other pages -->
+        <nav>
+            <a href="about.html"><b>About</b></a>
+            <a href="experience.html"><b>Experience</b></a>
+            <a href="project.html"><b>Projects</b></a>
+        </nav>
+  </header>
+
+  <!-- Main content section -->
+  <main>
+    <!-- Static information sidebar  -->
+    <section id="sidebar-section">
+        <!-- Personal Information -->
+        <picture>
+            <source srcset="resources/profile-pic-320x320.png" media="(max-width: 600px)">
+            <img src="resources/profile-pic-652x674.png" alt="Profile photo" width="400" height="400">
+        </picture>  
+        <!-- Text information -->
+        <div id="text-info"> 
+            <h2> Kainoa Woessner</h2>
+            <p>4th year Computer Engineering Student at UC San Diego</p>
+            <h3>College Progess...</h3>
+            <progress value="93" max="100">93% Complete!</progress>
+        </div>
+
+        <!-- Links -->
+        <nav id="media-links">
+            <h3>Links</h3>
+            <ul>
+              <li><a href="mailto:kainoawoessner@gmail.com">Email</a></li>
+              <li><a href="https://github.com/KaiWoessner">GitHub</a></li>
+              <li><a href="https://www.linkedin.com/in/kainoawoessner/">LinkedIn</a></li>
+              <li><a href="resources/kainoa-woessner-resume.pdf">Resume</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <!-- About section -->
+    <section id="about-section">
+      <h1>About</h1>
+      <p>
+        Hello! My name is Kainoa Woessner and I am an undergraduate student at the University of California,
+        San Diego (UCSD). I am interested in <strong>parallel computing</strong>, <strong>embedded systems</strong>, 
+        and <strong>web development</strong>. I plan to begin graduate school at UCSD in the Winter. 
+        Some things I enjoy doing in my free time is mountain biking, playing chess, and watching football.
+        <i> Go Chargers!</i>
+      </p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <span>2025</span> Kainoa Woessner</p>
+  </footer>
+
+  <!-- Settings dialog -->
+  <dialog id="settings-dialog" popover>
+    <button commandfor="settings-dialog" command="hide-popover">Close</button>
+
+    <!-- Light/Dark Mode -->
+    <legend>Theme</legend>
+    <label><input type="radio" name="theme" value="light" checked> Light</label>
+    <label><input type="radio" name="theme" value="dark"> Dark</label>
+
+    <!-- Send Message Form -->
+    <form method="post">
+
+      <fieldset>
+        <legend>Send a message to me!</legend>
+
+        <!-- Form contents -->
+        <label for="sender-name">Name:</label>
+        <input id="sender-name" name="name" type="text" placeholder="Your name">
+
+        <label for="sender-email">Email:</label>
+        <input id="sender-email" name="email" type="email" placeholder="you@example.com">
+
+        <label for="message-content">Message:</label>
+        <textarea id="message-content" name="message" rows="6" cols="40" placeholder="Write your message here"></textarea>
+        <br>
+        <button type="submit">Send</button>
+      </fieldset>
+    </form>
+  </dialog>
+
+  <hello-world></hello-world>
+
+  <noscript>
+    <p><em>Note:</em> JavaScript is disabled — interactive features are unavailable.</p>
+  </noscript>
+</body>
+</html>
