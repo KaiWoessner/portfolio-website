@@ -21,7 +21,7 @@
     <header>
         <!-- Settings button -->
         <settings-icon>
-            <button commandfor="settings-dialog" command="toggle-popover">
+            <button popovertarget="settings-dialog" popovertargetaction="show">
                 <img src="resources/settings-gear.svg" width="48" height="48" alt="Settings">
             </button>
         </settings-icon>
@@ -107,7 +107,7 @@
   
     <!-- Settings dialog -->
     <dialog id="settings-dialog" popover>
-        <button commandfor="settings-dialog" command="hide-popover">Close</button>
+        <button popovertarget="settings-dialog" popovertargetaction="hide">Close</button>
 
         <!-- Light/Dark Mode -->
         <fieldset>
