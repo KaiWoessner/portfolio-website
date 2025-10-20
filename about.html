@@ -23,8 +23,8 @@
   <header>
         <!-- Settings button -->
         <settings-icon>
-            <button commandfor="settings-dialog" command="toggle-popover">
-                <img src="resources/settings-gear.svg" width="48" height="48" alt="Settings" />
+            <button popovertarget="settings-dialog" popovertargetaction="show">
+                <img src="resources/settings-gear.svg" width="48" height="48" alt="Settings">
             </button>
         </settings-icon>
 
@@ -85,12 +85,14 @@
 
   <!-- Settings dialog -->
   <dialog id="settings-dialog" popover>
-    <button commandfor="settings-dialog" command="hide-popover">Close</button>
+    <button popovertarget="settings-dialog" popovertargetaction="hide">Close</button>
 
     <!-- Light/Dark Mode -->
-    <legend>Theme</legend>
-    <label><input type="radio" name="theme" value="light" checked> Light</label>
-    <label><input type="radio" name="theme" value="dark"> Dark</label>
+    <fieldset>
+      <legend>Theme</legend>
+      <label><input type="radio" name="theme" value="light" checked> Light</label>
+      <label><input type="radio" name="theme" value="dark"> Dark</label>
+    </fieldset>
 
     <!-- Send Message Form -->
     <form method="post">
